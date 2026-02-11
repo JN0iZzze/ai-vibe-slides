@@ -3,12 +3,17 @@ import { ChevronLeft, ChevronRight, Maximize, Minimize } from 'lucide-react';
 import { usePresentation } from '../hooks/usePresentation';
 import { slides } from '../slides/registry';
 
+// Базовое разрешение презентации (Full HD 16:9)
+const BASE_WIDTH = 1920;
+const BASE_HEIGHT = 1080;
+
 export const PresentationLayout: React.FC = () => {
   const { currentSlide, nextSlide, prevSlide, isFirst, isLast } = usePresentation(slides.length);
   const CurrentSlideComponent = slides[currentSlide];
 
   const [showControls, setShowControls] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [scale, setScale] = useState(1);
   const timerRef = useRef<number | null>(null);
 
   useEffect(() => {
@@ -40,6 +45,22 @@ export const PresentationLayout: React.FC = () => {
     return () => document.removeEventListener('fullscreenchange', handleFullscreenChange);
   }, []);
 
+  // Расчет масштаба для фиксированного соотношения сторон
+  useEffect(() => {
+    const handleResize = () => {
+      const scaleX = window.innerWidth / BASE_WIDTH;
+      const scaleY = window.innerHeight / BASE_HEIGHT;
+      // Выбираем меньший коэффициент, чтобы слайд целиком поместился в экран
+      const newScale = Math.min(scaleX, scaleY);
+      setScale(newScale);
+    };
+
+    window.addEventListener('resize', handleResize);
+    handleResize(); // Первичный расчет при монтировании
+
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
   const toggleFullscreen = async () => {
     if (!document.fullscreenElement) {
       await document.documentElement.requestFullscreen();
@@ -59,14 +80,25 @@ export const PresentationLayout: React.FC = () => {
   `;
 
   return (
-    <div className="relative h-screen w-screen bg-retro-bg text-retro-text overflow-hidden selection:bg-retro-text selection:text-retro-bg">
+    <div className="relative h-screen w-screen bg-black text-retro-text overflow-hidden selection:bg-retro-text selection:text-retro-bg flex items-center justify-center">
       {/* Scanline effect overlay - REMOVED */}
       {/* <div className="pointer-events-none absolute inset-0 z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] bg-repeat opacity-20" /> */}
 
-      {/* Main Content */}
-      <main className="h-full w-full relative z-10">
-        <CurrentSlideComponent />
-      </main>
+      {/* Масштабируемый контейнер с фиксированным соотношением сторон */}
+      <div
+        style={{
+          width: BASE_WIDTH,
+          height: BASE_HEIGHT,
+          transform: `scale(${scale})`,
+          transformOrigin: 'center center',
+        }}
+        className="relative bg-retro-bg shadow-2xl overflow-hidden flex-shrink-0"
+      >
+        {/* Main Content */}
+        <main className="h-full w-full relative z-10">
+          <CurrentSlideComponent />
+        </main>
+      </div>
 
       {/* Fullscreen Toggle */}
       <button
