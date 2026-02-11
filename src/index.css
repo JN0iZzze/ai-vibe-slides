@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+@theme {
+  --font-serif: "EB Garamond", serif;
+  --font-sans: "Google Sans", sans-serif;
+
+  /* Reference standard Tailwind v4 theme variables */
+  --color-retro-bg: #050a05;
+  --color-retro-text: var(--color-green-400);
+  --color-retro-dim: var(--color-green-800);
+  --color-retro-accent: var(--color-green-600);
+}
+
+@layer base {
+  body {
+    @apply bg-retro-bg text-retro-text font-sans overflow-hidden h-screen w-screen m-0 p-0;
+  }
+}
+
+/* Custom scrollbar hide just in case */
+::-webkit-scrollbar {
+  display: none;
+}
