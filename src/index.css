@@ -1,19 +1,42 @@
 @import "tailwindcss";
 
 @theme {
-  --font-serif: "EB Garamond", serif;
+  --font-serif: "Dela Gothic One", sans-serif;
   --font-sans: "Google Sans", sans-serif;
+  --font-garamond: "EB Garamond", serif;
 
-  /* Reference standard Tailwind v4 theme variables */
-  --color-retro-bg: #050a05;
-  --color-retro-text: var(--color-green-400);
-  --color-retro-dim: var(--color-green-800);
-  --color-retro-accent: var(--color-green-600);
+  /* Define base variables directly. These act as defaults and keys for utilities. */
+  --color-retro-bg: #f5f5f5;
+  --color-retro-text: #ff2a00;
+  --color-retro-dim: #1a1a1a;
+  --color-retro-accent: #000000;
 }
 
 @layer base {
+  /* Override the main variables directly in theme classes */
+  .theme-poster-red {
+    --color-retro-bg: #f5f5f5;
+    --color-retro-text: #ff2a00;
+    --color-retro-dim: #1a1a1a;
+    --color-retro-accent: #000000;
+  }
+
+  .theme-poster-blue {
+    --color-retro-bg: #0047ab;
+    --color-retro-text: #ffd700;
+    --color-retro-dim: #ffffff;
+    --color-retro-accent: #ff2a00;
+  }
+
+  .theme-poster-glided {
+    --color-retro-bg: #000000;
+    --color-retro-text: #ff2a00;
+    --color-retro-dim: #ffffff;
+    --color-retro-accent: #ffd700;
+  }
+
   body {
-    @apply bg-retro-bg text-retro-text font-sans overflow-hidden h-screen w-screen m-0 p-0;
+    @apply font-sans overflow-hidden h-screen w-screen m-0 p-0 transition-colors duration-500;
   }
 }
 

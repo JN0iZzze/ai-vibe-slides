@@ -1,15 +1,24 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ChevronLeft, ChevronRight, Maximize, Minimize } from 'lucide-react';
 import { usePresentation } from '../hooks/usePresentation';
-import { slides } from '../slides/registry';
+import { slides as defaultSlides } from '../slides/registry';
+import type { SlideConfig } from '../types/slide';
 
 // Базовое разрешение презентации (Full HD 16:9)
 const BASE_WIDTH = 1920;
 const BASE_HEIGHT = 1080;
 
-export const PresentationLayout: React.FC = () => {
+interface PresentationLayoutProps {
+  slides?: SlideConfig[];
+}
+
+export const PresentationLayout: React.FC<PresentationLayoutProps> = ({ slides = defaultSlides }) => {
   const { currentSlide, nextSlide, prevSlide, isFirst, isLast } = usePresentation(slides.length);
-  const CurrentSlideComponent = slides[currentSlide];
+  
+  const currentSlideConfig = slides[currentSlide];
+  const CurrentSlideComponent = currentSlideConfig.component;
+  
+  const themeClass = `theme-${currentSlideConfig.theme}`;
 
   const [showControls, setShowControls] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
@@ -80,7 +89,7 @@ export const PresentationLayout: React.FC = () => {
   `;
 
   return (
-    <div className="relative h-screen w-screen bg-black text-retro-text overflow-hidden selection:bg-retro-text selection:text-retro-bg flex items-center justify-center">
+    <div className={`relative h-screen w-screen bg-black text-retro-text overflow-hidden selection:bg-retro-text selection:text-retro-bg flex items-center justify-center ${themeClass}`}>
       {/* Scanline effect overlay - REMOVED */}
       {/* <div className="pointer-events-none absolute inset-0 z-50 bg-[linear-gradient(rgba(18,16,16,0)_50%,rgba(0,0,0,0.25)_50%),linear-gradient(90deg,rgba(255,0,0,0.06),rgba(0,255,0,0.02),rgba(0,0,255,0.06))] bg-[length:100%_2px,3px_100%] bg-repeat opacity-20" /> */}
 
@@ -92,7 +101,7 @@ export const PresentationLayout: React.FC = () => {
           transform: `scale(${scale})`,
           transformOrigin: 'center center',
         }}
-        className="relative bg-retro-bg shadow-2xl overflow-hidden flex-shrink-0"
+        className="relative bg-retro-bg shadow-2xl overflow-hidden flex-shrink-0 transition-colors duration-500"
       >
         {/* Main Content */}
         <main className="h-full w-full relative z-10">

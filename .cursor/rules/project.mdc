@@ -1,6 +1,5 @@
 ---
-description: Правила разработки проекта Retro Slide Viewer (React/Vite/Tailwind)
-globs: src/**/*.tsx, src/**/*.ts, src/**/*.css
+description: 
 alwaysApply: true
 ---
 

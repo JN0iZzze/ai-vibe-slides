@@ -31,7 +31,7 @@ export const BentoGallerySlide: React.FC = () => {
       {/* Title/Text Block - Top Far Right (1x1) */}
       <AnimatedBlock 
         delay={0.3} 
-        className="col-span-1 row-span-1 relative rounded-[2rem] overflow-hidden border-2 border-retro-accent flex items-center justify-center p-6 bg-retro-dim/10"
+        className="col-span-1 row-span-1 relative rounded-[2rem] overflow-hidden border-2 border-retro-text flex items-center justify-center p-6 bg-retro-dim/10"
       >
         <div className="text-center">
           <h2 className="font-serif italic text-5xl mb-2">Галерея</h2>
@@ -66,7 +66,7 @@ export const BentoGallerySlide: React.FC = () => {
       {/* Bottom Right Block (2x1) */}
       <AnimatedBlock 
         delay={0.6} 
-        className="col-span-2 row-span-1 relative rounded-[2rem] overflow-hidden border-2 border-retro-dim flex items-center justify-center p-8"
+        className="col-span-2 row-span-1 relative rounded-[2rem] overflow-hidden border-2 border-retro-text flex items-center justify-center p-8"
       >
         <p className="font-sans text-3xl text-center opacity-80">
           "Эстетика ретро-футуризма в каждой детали интерфейса."
