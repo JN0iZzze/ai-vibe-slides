@@ -1,4 +1,3 @@
-import React from 'react';
 import { AnimatedBlock } from '../../components/AnimatedBlock';
 
 export const PosterGridSlide = () => {

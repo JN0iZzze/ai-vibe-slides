@@ -18,19 +18,19 @@ import { AgenticWorkflowResultPrompt } from './content/AgenticWorkflowResultProm
 import { AgenticWorkflowResultGrid } from './content/AgenticWorkflowResultGrid';
 import { ReasoningModelsSlide } from './content/ReasoningModelsSlide';
 import { InterfaceLoop } from './content/InterfaceLoop';
-import { MkdirSlide } from './content/MkdirSlide';
+// import { MkdirSlide } from './content/MkdirSlide';
 import { CombShaped } from './content/CombShaped';
 import { ToolsGrowthSlide } from './content/ToolsGrowthSlide';
 import { BigFour } from './content/BigFour';
-import { NanoBananaProCase } from './content/NanoBananaProCase';
-import { ThinkingModeExample } from './content/ThinkingModeExample';
+// import { NanoBananaProCase } from './content/NanoBananaProCase';
+// import { ThinkingModeExample } from './content/ThinkingModeExample';
 import { StructuredPrompts } from './content/StructuredPrompts';
 import { LongStructuredPromptSlide } from './content/LongStructuredPromptSlide';
 import { JsonImagesSlide } from './content/JsonImagesSlide';
 import { PhotoPromptSlide } from './content/PhotoPromptSlide';
 import { JsonPrompting } from './content/JsonPrompting';
 import { ReferenceTypes } from './content/ReferenceTypes';
-import { Multilingualism } from './content/Multilingualism';
+// import { Multilingualism } from './content/Multilingualism';
 import { StyleTransfer } from './content/StyleTransfer';
 import { Identity } from './content/Identity';
 import { IdentityGridSlide } from './content/IdentityGridSlide';
@@ -59,7 +59,7 @@ import { FlouxVideoSlide } from './content/FlouxVideoSlide';
 import { AlfaWorkflowSlide } from './content/AlfaWorkflowSlide';
 import { AlfaTexturingSlide } from './content/AlfaTexturingSlide';
 import { AlfaDetailsSlide } from './content/AlfaDetailsSlide';
-import { AlfaMarkersSlide } from './content/AlfaMarkersSlide';
+// import { AlfaMarkersSlide } from './content/AlfaMarkersSlide';
 import { AlfaVideoGenSlide } from './content/AlfaVideoGenSlide';
 import { NeuralChoiceSlide } from './content/NeuralChoiceSlide';
 import { BenchmarksSlide } from './content/BenchmarksSlide';
@@ -72,7 +72,7 @@ import { GenComparisonSlide } from './content/GenComparisonSlide';
 import { HiigsfieldSlide } from './content/HiigsfieldSlide';
 import { NodeBasedSlide } from './content/NodeBasedSlide';
 import { FlouxDemoSlide } from './content/FlouxDemoSlide';
-import { PhotoRealismComparisonSlide } from './content/PhotoRealismComparisonSlide';
+// import { PhotoRealismComparisonSlide } from './content/PhotoRealismComparisonSlide';
 import { NanoBananaComparisonSlide } from './content/NanoBananaComparisonSlide';
 import { ReferenceContextSlide } from './content/ReferenceContextSlide';
 import { DisclaimerSlide } from './content/DisclaimerSlide';
@@ -87,8 +87,8 @@ import { CombSkillsPollSlide } from './content/CombSkillsPollSlide';
 import { CombSkillsGeminiResultSlide } from './content/CombSkillsGeminiResultSlide';
 
 // Unused but available for future use or alternative flows
-import { DiffusionVsReasoning } from './content/DiffusionVsReasoning';
-import { SeedreamCase } from './content/SeedreamCase';
+// import { DiffusionVsReasoning } from './content/DiffusionVsReasoning';
+// import { SeedreamCase } from './content/SeedreamCase';
 
 export const slides: SlideConfig[] = [
   // Intro / Fast changes
