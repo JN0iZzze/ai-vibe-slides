@@ -13,7 +13,23 @@ export const HiddenPreloader: React.FC<HiddenPreloaderProps> = ({ assets }) => {
   }
 
   return (
-    <div style={{ display: 'none' }} aria-hidden="true">
+    <div 
+      style={{ 
+        position: 'absolute', 
+        width: '1px', 
+        height: '1px', 
+        padding: 0, 
+        margin: '-1px', 
+        overflow: 'hidden', 
+        clip: 'rect(0, 0, 0, 0)', 
+        whiteSpace: 'nowrap', 
+        border: 0,
+        opacity: 0.01, // Не 0, чтобы браузер точно считал элемент "видимым"
+        pointerEvents: 'none',
+        zIndex: -9999
+      }} 
+      aria-hidden="true"
+    >
       {uniqueAssets.map((src) => {
         const isVideo = /\.(mp4|webm|mov)$/i.test(src);
 
@@ -25,9 +41,9 @@ export const HiddenPreloader: React.FC<HiddenPreloaderProps> = ({ assets }) => {
               preload="auto"
               muted
               playsInline
-              // Небольшой хак: запускаем загрузку, но не воспроизведение
-              onLoadedData={(e) => {
-                // Можно добавить логику, если нужно знать, что загрузилось
+              // Важно: для видео иногда нужно явно вызвать load()
+              ref={(el) => {
+                if (el) el.load();
               }}
             />
           );

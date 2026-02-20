@@ -40,9 +40,16 @@ export const ThankYouSlide: React.FC = () => {
 
         <AnimatedBlock delay={0.3} className="flex flex-col items-center leading-none select-none">
         
-          <h1 className="font-serif text-[15vw] leading-[0.8] text-retro-text text-center tracking-tighter italic">
+          <h1 className="font-serif text-[15vw] leading-[0.8] text-retro-text text-center tracking-tighter italic mb-8">
             Спасибо!
           </h1>
+
+          <div className="flex flex-col items-center">
+            <span className="font-mono text-sm text-retro-dim/60 uppercase tracking-[0.4em] mb-2">Telegram</span>
+            <p className="font-mono text-4xl md:text-6xl text-retro-dim tracking-wider">
+              @jn0izzze
+            </p>
+          </div>
           
           <div className="relative mt-12">
              {/* Russian subtitle overlay or below */}
