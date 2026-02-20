@@ -5,6 +5,7 @@ import { useSlidePreloader } from '../hooks/useSlidePreloader';
 import { slides as defaultSlides } from '../slides/registry';
 import type { SlideConfig } from '../types/slide';
 import { SlideListSidebar } from './SlideListSidebar';
+import { HiddenPreloader } from './HiddenPreloader';
 
 // Базовое разрешение презентации (Full HD 16:9)
 const BASE_WIDTH = 1920;
@@ -30,6 +31,22 @@ export const PresentationLayout: React.FC<PresentationLayoutProps> = ({ slides =
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [scale, setScale] = useState(1);
   const timerRef = useRef<number | null>(null);
+
+  // Собираем ассеты для предзагрузки из следующих 3 слайдов
+  const nextAssets = React.useMemo(() => {
+    const assets: string[] = [];
+    // Предзагружаем следующие 3 слайда
+    for (let i = 1; i <= 3; i++) {
+      const nextIndex = currentSlide + i;
+      if (nextIndex < slides.length) {
+        const slideAssets = slides[nextIndex].preloadAssets;
+        if (slideAssets) {
+          assets.push(...slideAssets);
+        }
+      }
+    }
+    return assets;
+  }, [currentSlide, slides]);
 
   useEffect(() => {
     const handleMouseMove = () => {
@@ -192,6 +209,9 @@ export const PresentationLayout: React.FC<PresentationLayoutProps> = ({ slides =
         goToSlide={goToSlide}
         onClose={() => setSidebarOpen(false)}
       />
+
+      {/* Скрытый прелоадер для следующих слайдов */}
+      <HiddenPreloader assets={nextAssets} />
     </div>
   );
 };
