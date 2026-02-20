@@ -15,16 +15,15 @@ export const HiddenPreloader: React.FC<HiddenPreloaderProps> = ({ assets }) => {
   return (
     <div 
       style={{ 
-        position: 'absolute', 
-        width: '1px', 
-        height: '1px', 
-        padding: 0, 
-        margin: '-1px', 
-        overflow: 'hidden', 
-        whiteSpace: 'nowrap', 
-        border: 0,
-        opacity: 0.01, // Не 0, чтобы браузер точно считал элемент "видимым"
+        position: 'fixed', 
+        bottom: 0, 
+        left: 0, 
+        width: '100%', 
+        height: '2px', // Увеличил высоту для теста
+        display: 'flex',
         pointerEvents: 'none',
+        zIndex: 999, // Максимальный z-index
+        opacity: 1, // Полная видимость
       }} 
       aria-hidden="true"
     >
@@ -39,7 +38,7 @@ export const HiddenPreloader: React.FC<HiddenPreloaderProps> = ({ assets }) => {
               preload="auto"
               muted
               playsInline
-              // Важно: для видео иногда нужно явно вызвать load()
+              style={{ width: '2px', height: '2px', objectFit: 'cover' }}
               ref={(el) => {
                 if (el) el.load();
               }}
@@ -52,7 +51,8 @@ export const HiddenPreloader: React.FC<HiddenPreloaderProps> = ({ assets }) => {
             key={src}
             src={src}
             alt=""
-            decoding="async" // Асинхронное декодирование, чтобы не блокировать UI
+            decoding="async"
+            style={{ width: '2px', height: '2px', objectFit: 'cover' }}
           />
         );
       })}

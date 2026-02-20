@@ -32,11 +32,11 @@ export const PresentationLayout: React.FC<PresentationLayoutProps> = ({ slides =
   const [scale, setScale] = useState(1);
   const timerRef = useRef<number | null>(null);
 
-  // Собираем ассеты для предзагрузки из следующих 3 слайдов
+  // Собираем ассеты для предзагрузки из следующих 10 слайдов
   const nextAssets = React.useMemo(() => {
     const assets: string[] = [];
-    // Предзагружаем следующие 3 слайда
-    for (let i = 1; i <= 3; i++) {
+    // Предзагружаем следующие 10 слайдов
+    for (let i = 1; i <= 10; i++) {
       const nextIndex = currentSlide + i;
       if (nextIndex < slides.length) {
         const slideAssets = slides[nextIndex].preloadAssets;
@@ -210,7 +210,7 @@ export const PresentationLayout: React.FC<PresentationLayoutProps> = ({ slides =
         onClose={() => setSidebarOpen(false)}
       />
 
-      {/* Скрытый прелоадер для следующих слайдов */}
+      {/* Скрытый прелоадер для следующих 10 слайдов */}
       <HiddenPreloader assets={nextAssets} />
     </div>
   );
