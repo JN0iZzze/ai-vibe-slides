@@ -2,12 +2,12 @@ import React from 'react';
 import { AnimatedBlock } from '../../components/AnimatedBlock';
 
 const images = [
-  '/images/grok/001.jpg',
-  '/images/grok/002.jpg',
-  '/images/grok/003.jpg',
-  '/images/grok/004.jpg',
-  '/images/grok/005.jpg',
-  '/images/grok/006.jpg',
+  '/images/alt/g1.jpg',
+  '/images/alt/g2.jpg',
+  '/images/alt/g3.jpg',
+  '/images/alt/g4.jpg',
+  '/images/alt/g5.jpg',
+  '/images/alt/g6.jpg',
 ];
 
 export const GrokGallerySlide: React.FC = () => {

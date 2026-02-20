@@ -2,9 +2,9 @@ import React from 'react';
 import { AnimatedBlock } from '../../components/AnimatedBlock';
 
 const images = [
-  '/images/seedream/001.jpg',
-  '/images/seedream/002.jpg',
-  '/images/seedream/003.jpg',
+  '/images/alt/s1.jpg',
+  '/images/alt/s2.jpg',
+  '/images/alt/s3.jpg',
 ];
 
 export const SeedreamGallerySlide: React.FC = () => {

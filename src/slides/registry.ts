@@ -66,6 +66,8 @@ import { BenchmarksSlide } from './content/BenchmarksSlide';
 import { StyledModelsSlide } from './content/StyledModelsSlide';
 import { SeedreamGallerySlide } from './content/SeedreamGallerySlide';
 import { GrokGallerySlide } from './content/GrokGallerySlide';
+import { PromoCodeSlide } from './content/PromoCodeSlide';
+import { ThankYouSlide } from './content/ThankYouSlide';
 import { GenComparisonSlide } from './content/GenComparisonSlide';
 import { HiigsfieldSlide } from './content/HiigsfieldSlide';
 import { NodeBasedSlide } from './content/NodeBasedSlide';
@@ -326,8 +328,14 @@ export const slides: SlideConfig[] = [
   { component: StyledModelsSlide, theme: 'poster-red', title: 'Альтернативные модели' },
 
   // Seedream Gallery
-  { component: SeedreamGallerySlide, theme: 'poster-red', title: 'Seedream Gallery', preloadAssets: ['/images/seedream/001.jpg', '/images/seedream/002.jpg', '/images/seedream/003.jpg'] },
+  { component: SeedreamGallerySlide, theme: 'poster-red', title: 'Seedream Gallery', preloadAssets: ['/images/alt/s1.jpg', '/images/alt/s2.jpg', '/images/alt/s3.jpg'] },
 
   // Grok Gallery
-  { component: GrokGallerySlide, theme: 'poster-red', title: 'Grok Gallery', preloadAssets: ['/images/grok/001.jpg', '/images/grok/002.jpg', '/images/grok/003.jpg', '/images/grok/004.jpg', '/images/grok/005.jpg', '/images/grok/006.jpg'] },
+  { component: GrokGallerySlide, theme: 'poster-red', title: 'Grok Gallery', preloadAssets: ['/images/alt/g1.jpg', '/images/alt/g2.jpg', '/images/alt/g3.jpg', '/images/alt/g4.jpg', '/images/alt/g5.jpg', '/images/alt/g6.jpg'] },
+
+  // Спасибо!
+  { component: ThankYouSlide, theme: 'poster-glided', title: 'Спасибо!', preloadAssets: ['/bg-intro.png'] },
+
+  // Промокод
+  { component: PromoCodeSlide, theme: 'poster-glided', title: 'Промокод' },
 ];
