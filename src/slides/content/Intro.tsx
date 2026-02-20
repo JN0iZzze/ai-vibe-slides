@@ -30,7 +30,7 @@ export const Intro: React.FC = () => {
       {/* Main Title - Centered & HUGE */}
       <div className="absolute inset-0 flex flex-col items-center justify-center z-0 pointer-events-none translate-y-16 p-8">
         {/* Background Image behind text */}
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[600px] w-[40%] h-[40%] z-[-1] opacity-60">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-[550px] w-[30%] h-[30%] z-[-1] opacity-60">
           <img 
             src="/bg-intro.png" 
             alt="" 
