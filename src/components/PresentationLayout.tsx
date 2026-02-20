@@ -1,8 +1,10 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ChevronLeft, ChevronRight, Maximize, Minimize } from 'lucide-react';
+import { ChevronLeft, ChevronRight, Maximize, Minimize, Menu } from 'lucide-react';
 import { usePresentation } from '../hooks/usePresentation';
+import { useSlidePreloader } from '../hooks/useSlidePreloader';
 import { slides as defaultSlides } from '../slides/registry';
 import type { SlideConfig } from '../types/slide';
+import { SlideListSidebar } from './SlideListSidebar';
 
 // Базовое разрешение презентации (Full HD 16:9)
 const BASE_WIDTH = 1920;
@@ -13,7 +15,10 @@ interface PresentationLayoutProps {
 }
 
 export const PresentationLayout: React.FC<PresentationLayoutProps> = ({ slides = defaultSlides }) => {
-  const { currentSlide, nextSlide, prevSlide, isFirst, isLast } = usePresentation(slides.length);
+  const { currentSlide, nextSlide, prevSlide, goToSlide, isFirst, isLast } = usePresentation(slides.length);
+  
+  // Предзагрузка всех ассетов с отслеживанием прогресса
+  const { progress } = useSlidePreloader(slides);
   
   const currentSlideConfig = slides[currentSlide];
   const CurrentSlideComponent = currentSlideConfig.component;
@@ -22,6 +27,7 @@ export const PresentationLayout: React.FC<PresentationLayoutProps> = ({ slides =
 
   const [showControls, setShowControls] = useState(false);
   const [isFullscreen, setIsFullscreen] = useState(false);
+  const [sidebarOpen, setSidebarOpen] = useState(false);
   const [scale, setScale] = useState(1);
   const timerRef = useRef<number | null>(null);
 
@@ -109,6 +115,17 @@ export const PresentationLayout: React.FC<PresentationLayoutProps> = ({ slides =
         </main>
       </div>
 
+      {/* Menu Button */}
+      <button
+        className={`absolute top-8 left-8 ${controlButtonStyles} ${
+          showControls ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
+        }`}
+        onClick={() => setSidebarOpen(true)}
+        aria-label="Открыть меню слайдов"
+      >
+        <Menu size={24} />
+      </button>
+
       {/* Fullscreen Toggle */}
       <button
         className={`absolute top-8 right-8 ${controlButtonStyles} ${
@@ -145,14 +162,36 @@ export const PresentationLayout: React.FC<PresentationLayoutProps> = ({ slides =
         </button>
       )}
 
-      {/* Slide Counter */}
+      {/* Slide Counter - bottom-left */}
       <div
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 z-20 font-mono text-sm tracking-[0.2em] text-retro-text px-6 py-2 rounded-full bg-white/10 backdrop-blur-md transition-opacity duration-300 ${
+        className={`absolute bottom-8 left-8 z-20 transition-opacity duration-300 ${
           showControls ? 'opacity-80' : 'opacity-0'
         }`}
       >
-        {String(currentSlide + 1).padStart(2, '0')} <span className="opacity-50 mx-2">/</span> {String(slides.length).padStart(2, '0')}
+        <div className="font-mono text-sm tracking-[0.2em] text-retro-text px-6 py-2 rounded-full bg-white/10 backdrop-blur-md">
+          {String(currentSlide + 1).padStart(2, '0')} <span className="opacity-50 mx-2">/</span> {String(slides.length).padStart(2, '0')}
+        </div>
       </div>
+
+      {/* Media Progress - bottom-right */}
+      <div
+        className={`absolute bottom-8 right-8 z-20 transition-opacity duration-300 ${
+          showControls ? 'opacity-80' : 'opacity-0'
+        }`}
+      >
+        <div className="font-mono text-sm tracking-[0.2em] text-retro-text px-6 py-2 rounded-full bg-white/10 backdrop-blur-md">
+          Media {Math.round(progress * 100)}%
+        </div>
+      </div>
+
+      {/* Slide List Sidebar */}
+      <SlideListSidebar
+        open={sidebarOpen}
+        slides={slides}
+        currentSlide={currentSlide}
+        goToSlide={goToSlide}
+        onClose={() => setSidebarOpen(false)}
+      />
     </div>
   );
 };

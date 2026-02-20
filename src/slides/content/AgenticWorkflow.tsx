@@ -21,7 +21,7 @@ export const AgenticWorkflow: React.FC = () => {
             <h2 className="text-6xl font-serif italic mb-4">Thinking Mode</h2>
             <p className="text-xl font-mono uppercase tracking-widest opacity-60 mb-8">Размышление</p>
             <p className="text-2xl font-medium opacity-90 leading-relaxed mt-auto">
-              Анализирует промт, определяет требования к композиции и содержимому
+              Анализирует промт, определяет требования к композиции
             </p>
           </div>
         </AnimatedBlock>
@@ -41,6 +41,7 @@ export const AgenticWorkflow: React.FC = () => {
             </div>
             <h2 className="text-6xl font-serif italic mb-4">Search Grounding</h2>
             <p className="text-xl font-mono uppercase tracking-widest opacity-60 mb-8">Проверка реальности</p>
+            <p className="text-2xl opacity-60 mb-8">(Доступно не на всех платформах)</p>
             <p className="text-2xl font-medium opacity-90 leading-relaxed mt-auto">
               Гуглит сюжет 5-го сезона, использует реальные факты и сюжет
             </p>

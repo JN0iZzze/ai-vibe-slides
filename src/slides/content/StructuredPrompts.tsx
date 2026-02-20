@@ -1,4 +1,5 @@
 import React from 'react';
+import { User, Zap, Lightbulb, Palette, Heart, Braces, Terminal } from 'lucide-react';
 import { AnimatedBlock } from '../../components/AnimatedBlock';
 
 export const StructuredPrompts: React.FC = () => {

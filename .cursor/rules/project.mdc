@@ -5,6 +5,10 @@ alwaysApply: true
 
 # Project Context
 Это веб-приложение для онлайн-презентаций (Slide Viewer) в эстетике ретро-компьютеров.
+**Цель**: Презентация для Британской Высшей Школы Дизайна (BHSAD) 2026.
+**Автор**: Evseichev Anton.
+**Тема**: Generative Graphics 2026 (Image-Context-Engineering, Structured Prompts, Neural Choice).
+
 Стек: React, TypeScript, Vite, Tailwind CSS v4.
 
 # Core Principles & Constraints
@@ -15,7 +19,7 @@ alwaysApply: true
 - **Навигация**: Основная навигация — стрелки клавиатуры. UI-контролы (стрелки по бокам) должны автоматически скрываться.
 - **Скролл**: Вертикальный скролл запрещен (`overflow-hidden`). Весь контент должен помещаться в viewport (100vh/100vw).
 
-## 2. Дизайн-система (Retro Vibe)
+## 2. Дизайн-система (Retro Vibe & Poster Style)
 - **Скругления**: Используем большие радиусы для блоков: `rounded-[2rem]` (или `rounded-3xl` в крайних случаях).
 - **Цвета**: Используем кастомные переменные темы Tailwind:
   - `bg-retro-bg` (почти черный)
@@ -23,17 +27,40 @@ alwaysApply: true
   - `border-retro-dim` (тусклый зеленый для рамок)
   - `border-retro-accent` (яркий акцент)
 - **Типографика**:
-  - Заголовки: `font-serif` (EB Garamond / Great Vibes).
-  - Текст: `font-sans` (Google Sans).
-  - Тексты должны быть крупными для читаемости издалека.
+  - **Заголовки**: `font-serif` (EB Garamond / Great Vibes) — используем ОЧЕНЬ КРУПНО (text-7xl, text-8xl, text-[10vw]).
+  - **Текст**: `font-sans` (Google Sans) — для основного контента.
+  - **Мета-инфо**: `font-mono` — для технического текста, подписей, декоративных элементов (uppercase, tracking-widest).
+  - **Контраст**: Сочетаем гигантские заголовки с мелким техническим текстом по углам.
+- **Декор**:
+  - Иконки `lucide-react` (Zap, Sparkles, Cpu, Scale) или `@lobehub/icons` (Gemini, OpenAI).
+  - Технические надписи: `// SYSTEM_ONLINE`, `// EDUCATIONAL_USE_ONLY`, `BHSAD 2026`.
+  - Размытые фоновые пятна (`blur-3xl`, `blur-[100px]`, `opacity-20`).
+  - Разделитель: `h-1 w-48 bg-retro-dim/30 rounded-full`.
 
-## 3. Архитектура Слайдов
+## 3. Паттерны Layout слайдов
+- **Центрированный**: `flex flex-col items-center justify-center p-16` — один главный тезис (ReferenceContextSlide, DisclaimerSlide).
+- **Фон + overlay**: `absolute inset-0 z-0` для фона, `z-20` для мета, `z-30` для текста — полноэкранное фото (JsonPrompting, StyleTransfer).
+- **Grid**: `grid grid-cols-12` или `grid-cols-4` — карточки, списки (StructuredPrompts, BigFour, ProWorkflow).
+- **Две колонки**: `flex flex-row gap-16` — сравнение, список + визуал (ReferenceCounts, WorkflowComparison).
+- **Мета по углам**: `absolute top-12 left-12 right-12` / `bottom-12 left-12 right-12` — BHSAD, автор, теги.
+- **Карточки**: `rounded-[2rem]`, `border border-retro-dim/30`, `bg-retro-dim/5`. Доминирующая: `bg-retro-text text-retro-bg`.
+- **Изображения**: `rounded-[2rem]`, `max-h-full object-contain`. Анимация: `direction="left"` / `direction="right"`.
+
+## 4. Архитектура Слайдов
 - **Разделение ответственности**:
   - `src/slides/templates/`: Переиспользуемые шаблоны верстки (без хардкода данных, в идеале).
   - `src/slides/content/`: Конкретные слайды презентации с данными (Slide1, Slide2...).
+- **Шаблон «Фон + мета»**: Слайды с полноэкранным фоном (JsonPrompting, StyleTransfer) используют общий паттерн: фон `z-0`, мета сверху/снизу `z-20`, крупный заголовок `z-30`. При добавлении похожих слайдов — переиспользовать этот паттерн.
 - **Регистрация**: Новые слайды добавляются в массив `slides` в `src/slides/registry.ts`.
+  - **Обязательно указывать**:
+    - `component`: Компонент слайда.
+    - `theme`: Тема (`poster-red`, `poster-blue`, `poster-glided`).
+    - `title`: Название слайда для навигации.
+  - **Опционально**:
+    - `preloadAssets`: Массив путей к изображениям/видео для предзагрузки (`['/images/foo.png']`).
+- **Placeholder**: Не оставлять `[TBD]` и «Заполнить позже» в готовых слайдах — использовать реальный контент или минимальную заглушку.
 
-## 4. Анимации (AnimatedBlock)
+## 5. Анимации (AnimatedBlock)
 Для плавного появления элементов ВСЕГДА используем компонент `AnimatedBlock`.
 Не пишем `framer-motion` код вручную в каждом слайде.
 
@@ -43,14 +70,14 @@ import { AnimatedBlock } from '../../components/AnimatedBlock';
 
 // ...
 <AnimatedBlock delay={0.1} direction="up">
-  <h1>Заголовок</h1>
+  <h1 className="font-serif text-8xl">Заголовок</h1>
 </AnimatedBlock>
 <AnimatedBlock delay={0.3} className="col-span-2">
-  <p>Контент</p>
+  <p className="font-sans text-3xl">Контент</p>
 </AnimatedBlock>
 ```
 
-## 5. Coding Standards
+## 6. Coding Standards
 - Используем функциональные компоненты React.
 - Не используем `default export`, только именованные экспорты (`export const Slide1 ...`).
 - Импорты должны быть корректными (следить за путями `../../`).

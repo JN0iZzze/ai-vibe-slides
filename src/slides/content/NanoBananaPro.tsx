@@ -8,7 +8,7 @@ export const NanoBananaPro: React.FC = () => {
       {/* Background */}
       <div className="absolute inset-0 z-0">
         <motion.img
-          src="/bg/banana2.png"
+          src="/bg/banana.png"
           alt=""
           className="w-full h-full object-cover"
           initial={{ opacity: 0 }}

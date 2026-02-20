@@ -3,16 +3,21 @@ import { AnimatedBlock } from '../../components/AnimatedBlock';
 
 export const ProInterfacesScreens: React.FC = () => {
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center p-20">
-      <AnimatedBlock delay={0.1}>
-        <h1 className="font-serif text-7xl mb-8 text-center text-retro-text">
-          Сложные интерфейсы
-        </h1>
+    <div className="h-full w-full relative">
+      <AnimatedBlock delay={0.1} className="absolute top-8 right-16 bottom-8 left-48">
+        <img 
+          src="/images/tools/001.png" 
+          alt="" 
+          className="w-full h-full object-contain"
+        />
       </AnimatedBlock>
-      <AnimatedBlock delay={0.3}>
-        <p className="text-4xl opacity-80 max-w-4xl text-center font-sans text-retro-dim">
-          Adobe, Blender и прочее — профессионалы привыкли работать со сложными UI
-        </p>
+      <AnimatedBlock delay={0.3} className="absolute left-16 top-0 h-full">
+        <img 
+          src="/images/tools/002.png" 
+          alt="" 
+          className="h-full object-contain"
+          style={{ width: '800px' }}
+        />
       </AnimatedBlock>
     </div>
   );

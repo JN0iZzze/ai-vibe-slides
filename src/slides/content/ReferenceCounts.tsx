@@ -1,4 +1,5 @@
 import React from 'react';
+import { ImagePlus } from 'lucide-react';
 import { AnimatedBlock } from '../../components/AnimatedBlock';
 
 const data = [
@@ -11,9 +12,15 @@ const data = [
 export const ReferenceCounts: React.FC = () => {
   return (
     <div className="h-full w-full p-16 flex flex-row gap-16 overflow-hidden">
-      {/* Left: картинка-заглушка */}
-      <AnimatedBlock delay={0.1} className="flex-1 min-w-0 rounded-[2rem] overflow-hidden border border-retro-dim flex items-center justify-center bg-retro-dim/10">
-        <span className="font-serif text-4xl text-retro-dim italic opacity-50">Изображение</span>
+      {/* Left: 16 иконок изображений (4x4) */}
+      <AnimatedBlock delay={0.1} className="flex-1 min-w-0 flex items-center justify-center">
+        <div className="grid grid-cols-4 gap-6 w-full">
+          {Array.from({ length: 16 }).map((_, i) => (
+            <div key={i} className="aspect-square rounded-3xl flex items-center justify-center bg-retro-dim/10">
+              <ImagePlus size={48} className="text-retro-dim opacity-60" />
+            </div>
+          ))}
+        </div>
       </AnimatedBlock>
 
       {/* Right: список строчками */}
