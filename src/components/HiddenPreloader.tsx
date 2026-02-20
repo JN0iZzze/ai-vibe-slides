@@ -21,12 +21,10 @@ export const HiddenPreloader: React.FC<HiddenPreloaderProps> = ({ assets }) => {
         padding: 0, 
         margin: '-1px', 
         overflow: 'hidden', 
-        clip: 'rect(0, 0, 0, 0)', 
         whiteSpace: 'nowrap', 
         border: 0,
         opacity: 0.01, // Не 0, чтобы браузер точно считал элемент "видимым"
         pointerEvents: 'none',
-        zIndex: -9999
       }} 
       aria-hidden="true"
     >

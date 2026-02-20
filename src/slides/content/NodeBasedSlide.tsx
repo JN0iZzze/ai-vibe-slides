@@ -15,7 +15,7 @@ export const NodeBasedSlide: React.FC = () => {
         <div className="grid grid-cols-3 gap-6 w-full">
           {nodes.map((node) => (
             <div key={node.name} className="flex flex-col items-center rounded-[2rem] overflow-hidden">
-              <div className="w-full rounded-[2rem] overflow-hidden flex items-center justify-center">
+              <div className="w-full h-[70vh] rounded-[2rem] overflow-hidden flex items-center justify-center">
                 <img
                   src={node.src}
                   alt=""
