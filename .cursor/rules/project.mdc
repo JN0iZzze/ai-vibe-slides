@@ -4,7 +4,7 @@ alwaysApply: true
 ---
 
 # Project Context
-Это веб-приложение для онлайн-презентаций (Slide Viewer) в эстетике ретро-компьютеров.
+Это веб-приложение для онлайн-презентаций (Slide Viewer).
 **Цель**: Презентация для Британской Высшей Школы Дизайна (BHSAD) 2026.
 **Автор**: Evseichev Anton.
 **Тема**: Generative Graphics 2026 (Image-Context-Engineering, Structured Prompts, Neural Choice).
