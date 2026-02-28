@@ -8,6 +8,7 @@ import { Vibe04PersonalApps } from './vibecoding/Vibe04PersonalApps';
 import { Vibe05NewWaveProducts } from './vibecoding/Vibe05NewWaveProducts';
 import { Vibe06FutureSaaS } from './vibecoding/Vibe06FutureSaaS';
 import { Vibe07CursorVsAll } from './vibecoding/Vibe07CursorVsAll';
+import { Vibe07CursorScreenshot } from './vibecoding/Vibe07CursorScreenshot';
 import { Vibe08WebStack } from './vibecoding/Vibe08WebStack';
 import { Vibe08MobileStack } from './vibecoding/Vibe08MobileStack';
 import { Vibe09AiModels } from './vibecoding/Vibe09AiModels';
@@ -26,6 +27,7 @@ export const vibecodingSlides: SlideConfig[] = [
   { component: Vibe04PersonalApps, theme: 'poster-glided', title: 'Эра персональных приложений' },
   { component: Vibe06FutureSaaS, theme: 'poster-blue', title: 'Будущее SaaS' },
   { component: Vibe07CursorVsAll, theme: 'poster-glided', title: 'Cursor vs Figma Make / Lovable' },
+  { component: Vibe07CursorScreenshot, theme: 'poster-glided', title: 'Cursor', preloadAssets: ['/images/vibe/cursor.png'] },
   { component: Vibe08WebStack, theme: 'poster-red', title: 'Web Стек' },
   { component: Vibe08MobileStack, theme: 'poster-glided', title: 'Mobile Стек' },
   { component: Vibe09AiModels, theme: 'poster-glided', title: 'Claude / Gemini / GPT' },
