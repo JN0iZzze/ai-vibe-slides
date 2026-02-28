@@ -11,7 +11,9 @@ import { Vibe07CursorVsAll } from './vibecoding/Vibe07CursorVsAll';
 import { Vibe07CursorScreenshot } from './vibecoding/Vibe07CursorScreenshot';
 import { Vibe08WebStack } from './vibecoding/Vibe08WebStack';
 import { Vibe08MobileStack } from './vibecoding/Vibe08MobileStack';
+import { Vibe08QuoteReact } from './vibecoding/Vibe08QuoteReact';
 import { Vibe09AiModels } from './vibecoding/Vibe09AiModels';
+import { Vibe09ModelsModes } from './vibecoding/Vibe09ModelsModes';
 import { Vibe10CursorModes } from './vibecoding/Vibe10CursorModes';
 import { Vibe11RulesContext } from './vibecoding/Vibe11RulesContext';
 import { Vibe11MarkdownDocs } from './vibecoding/Vibe11MarkdownDocs';
@@ -30,7 +32,9 @@ export const vibecodingSlides: SlideConfig[] = [
   { component: Vibe07CursorScreenshot, theme: 'poster-glided', title: 'Cursor', preloadAssets: ['/images/vibe/cursor.png'] },
   { component: Vibe08WebStack, theme: 'poster-red', title: 'Web Стек' },
   { component: Vibe08MobileStack, theme: 'poster-glided', title: 'Mobile Стек' },
+  { component: Vibe08QuoteReact, theme: 'poster-red', title: 'Цитата' },
   { component: Vibe09AiModels, theme: 'poster-glided', title: 'Claude / Gemini / GPT' },
+  { component: Vibe09ModelsModes, theme: 'poster-blue', title: 'Models & Modes', preloadAssets: ['/images/vibe/models.png', '/images/vibe/modes.png'] },
   { component: Vibe12OccamsRazor, theme: 'poster-glided', title: 'Бритва Оккама' },
   { component: Vibe11RulesContext, theme: 'poster-blue', title: 'Правила и контекст' },
   { component: Vibe11MarkdownDocs, theme: 'poster-glided', title: 'Markdown как документация' },
