@@ -15,6 +15,7 @@ import { Vibe08QuoteReact } from './vibecoding/Vibe08QuoteReact';
 import { Vibe09AiModels } from './vibecoding/Vibe09AiModels';
 import { Vibe09ModelsModes } from './vibecoding/Vibe09ModelsModes';
 import { Vibe10CursorModes } from './vibecoding/Vibe10CursorModes';
+import { Vibe10PlanScreenshot } from './vibecoding/Vibe10PlanScreenshot';
 import { Vibe11RulesContext } from './vibecoding/Vibe11RulesContext';
 import { Vibe11MarkdownDocs } from './vibecoding/Vibe11MarkdownDocs';
 import { Vibe12OccamsRazor } from './vibecoding/Vibe12OccamsRazor';
@@ -39,4 +40,5 @@ export const vibecodingSlides: SlideConfig[] = [
   { component: Vibe11RulesContext, theme: 'poster-blue', title: 'Правила и контекст' },
   { component: Vibe11MarkdownDocs, theme: 'poster-glided', title: 'Markdown как документация' },
   { component: Vibe10CursorModes, theme: 'poster-red', title: 'Agent / Plan / Debug / Ask' },
+  { component: Vibe10PlanScreenshot, theme: 'poster-glided', title: 'Plan', preloadAssets: ['/images/vibe/plan.png'] },
 ];
