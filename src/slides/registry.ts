@@ -414,5 +414,5 @@ export const slides: SlideConfig[] = [
   { component: ThankYouSlide, theme: 'poster-glided', title: 'Спасибо!', preloadAssets: ['/bg-intro.png'] },
 
   // 95 — Промокод
-  { component: PromoCodeSlide, theme: 'poster-glided', title: 'Промокод' },
+  // { component: PromoCodeSlide, theme: 'poster-glided', title: 'Промокод' },
 ];

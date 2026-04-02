@@ -50,10 +50,10 @@ export const AttentionModels2026Slide: React.FC = () => {
             2026 / Рабочий стек
           </p>
           <h1 className="mt-4 max-w-5xl font-serif text-7xl leading-none text-retro-text">
-            На что стоит обратить внимание
+             Что актуально сейчас
           </h1>
-          <p className="mt-5 max-w-4xl font-sans text-2xl leading-tight text-retro-dim">
-            Не рейтинг победителей, а короткая карта моделей и направлений, которые уже
+          <p className="mt-5 max-w-7xl font-sans text-2xl leading-tight text-retro-dim">
+            Не рейтинг победителей, но краткая карта моделей, которые уже
             полезны в ежедневной работе.
           </p>
         </AnimatedBlock>

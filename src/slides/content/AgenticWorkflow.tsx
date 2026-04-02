@@ -7,7 +7,7 @@ export const AgenticWorkflow: React.FC = () => {
     <div className="h-full w-full flex flex-col p-12 font-sans">
       <AnimatedBlock delay={0.1}>
         <h2 className="text-6xl font-serif italic mb-12 leading-[0.9] max-w-[80%]">
-          NB Pro / 2 - как модель-агент
+          Nano Banana Pro - как агент
         </h2>
       </AnimatedBlock>
 

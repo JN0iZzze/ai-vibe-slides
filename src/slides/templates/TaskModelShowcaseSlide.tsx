@@ -92,7 +92,7 @@ export const TaskModelShowcaseSlide: React.FC<TaskModelShowcaseSlideProps> = ({
                     card.accent ? 'text-retro-bg/80' : 'text-retro-dim'
                   }`}
                 >
-                  {card.note}
+
                 </p>
 
                 {card.image ? (
