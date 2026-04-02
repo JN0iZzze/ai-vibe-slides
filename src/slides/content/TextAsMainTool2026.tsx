@@ -10,9 +10,14 @@ export const TextAsMainTool2026: React.FC = () => {
         </h1>
       </AnimatedBlock>
       <AnimatedBlock delay={0.3}>
-        <p className="text-4xl opacity-80 max-w-5xl text-center font-sans text-retro-dim mt-8">
-          Как основной инструмент в 2026 — навыки постановки задачи, арт-дирекшена и дирежирования
-        </p>
+        <div className="mt-8 text-center">
+          <p className="font-sans text-5xl leading-tight text-retro-text">
+            это «новый» интерфейс
+          </p>
+          <p className="mt-3 font-sans text-4xl leading-tight text-retro-dim">
+            и один из важнейших навыков
+          </p>
+        </div>
       </AnimatedBlock>
     </div>
   );

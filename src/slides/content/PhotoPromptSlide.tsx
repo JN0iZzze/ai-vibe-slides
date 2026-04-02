@@ -1,9 +1,11 @@
 import React from 'react';
 import { AnimatedBlock } from '../../components/AnimatedBlock';
 
-const prompt1 = 'describe composition of image, action, pose, camera angle. Do not describe woman appearance, outfit, hair color, eyes. Add to prompt: gaze in slightly right';
+const prompt1 =
+  'Describe only the composition, action, pose and camera angle from Image 1. Do not describe identity, outfit, hair or face.';
 
-const prompt2 = 'Create comprehensive JSON prompt based on this image: describe composition of image, action, pose, camera angle, setting, environment, lighting and other details. Do not describe woman appearance, outfit, hair color, eyes. Return only structured JSON prompt, no additional text';
+const prompt2 =
+  'Convert Image 1 into a structured JSON prompt: composition, action, camera, environment, lighting. Preserve role separation and return only JSON.';
 
 export const PhotoPromptSlide: React.FC = () => {
   return (
@@ -18,11 +20,11 @@ export const PhotoPromptSlide: React.FC = () => {
         <span className="font-sans text-7xl text-retro-dim leading-[0.25]">®©</span>
       </AnimatedBlock>
 
-      {/* Left: Prompts — два разных промпта с заголовками */}
+      {/* Left: Prompts — от обычной инструкции к структурированной */}
       <div className="w-1/3 h-full flex flex-col justify-center pr-8 pt-16 gap-12">
         <AnimatedBlock delay={0.2}>
           <h3 className="font-sans text-md font-bold text-retro-text uppercase tracking-widest mb-4">
-            Промпт 1
+            Из картинки в инструкцию
           </h3>
           <p className="font-mono text-2xl text-retro-dim leading-[1.25]">
             {prompt1}
@@ -30,7 +32,7 @@ export const PhotoPromptSlide: React.FC = () => {
         </AnimatedBlock>
         <AnimatedBlock delay={0.3}>
           <h3 className="font-sans text-md font-bold text-retro-text uppercase tracking-widest mb-4">
-            Промпт 2
+            Из инструкции в JSON
           </h3>
           <p className="font-mono text-2xl text-retro-dim leading-[1.25]">
             {prompt2}

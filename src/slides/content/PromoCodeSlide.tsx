@@ -14,7 +14,7 @@ export const PromoCodeSlide: React.FC = () => {
         <div className="border-4 border-retro-text rounded-[2rem] px-16 py-8 bg-retro-text/5 backdrop-blur-sm relative overflow-hidden">
           <div className="absolute inset-0 bg-retro-text/5 animate-pulse" />
           <h2 className="font-mono text-[6vw] font-bold text-retro-text tracking-widest relative z-10">
-            BHSADPROMO
+            FLOUX2026
           </h2>
         </div>
       </AnimatedBlock>

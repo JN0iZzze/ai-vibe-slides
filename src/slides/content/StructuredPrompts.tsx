@@ -19,7 +19,7 @@ export const StructuredPrompts: React.FC = () => {
           {/* Editor Content */}
           <div className="p-12 font-mono text-3xl leading-relaxed">
             <AnimatedBlock delay={0.4}>
-              <div className="opacity-50 mb-8">// Вместо длинного текста — четкая структура</div>
+              <div className="opacity-50 mb-8">// Та же инструкция, только разложенная по явным полям</div>
             </AnimatedBlock>
             
             <AnimatedBlock delay={0.6}>
@@ -37,7 +37,8 @@ export const StructuredPrompts: React.FC = () => {
             <AnimatedBlock delay={0.8}>
               <div className="mt-10 pl-6 border-l-4 border-retro-dim">
                 <p className="opacity-80 text-2xl text-retro-dim">
-                  Модель не «угадывает» связи слов, а получает четкие инструкции для каждого аспекта изображения.
+                  JSON не заменяет промпт, а делает его строже: subject, action, lighting и style
+                  становятся отдельными частями одной инструкции.
                 </p>
               </div>
             </AnimatedBlock>

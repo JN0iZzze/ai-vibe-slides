@@ -8,12 +8,12 @@ import { AnimatedBlock } from '../../components/AnimatedBlock';
 
 export const StyledModelsSlide: React.FC = () => {
   return (
-    <div className="h-full w-full p-16 flex flex-col">
+    <div className="flex h-full w-full flex-col overflow-hidden p-16">
       <AnimatedBlock delay={0.1}>
         <h2 className="text-7xl font-serif italic mb-8 text-retro-text">Стилизованная графика</h2>
       </AnimatedBlock>
       
-      <div className="flex-1 grid grid-cols-4 grid-rows-2 gap-6">
+      <div className="grid min-h-0 flex-1 grid-cols-4 grid-rows-2 gap-6">
         {/* 1. Midjourney — 1x2 (Vertical) */}
         <AnimatedBlock delay={0.2} className="h-full col-span-1 row-span-2">
           <div className="bg-retro-text text-retro-bg rounded-[2rem] p-6 flex flex-col justify-between h-full relative overflow-hidden">

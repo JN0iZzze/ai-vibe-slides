@@ -51,7 +51,7 @@ export const GeminiAnalysisSlide: React.FC<GeminiAnalysisSlideProps> = ({ pollId
       <div className="absolute top-12 left-12 right-12 flex justify-between items-start z-20 px-16">
         <AnimatedBlock delay={0.1}>
           <div className="flex flex-col">
-            <span className="font-mono text-xl text-retro-dim tracking-widest uppercase font-bold">BHSAD 2026</span>
+            <span className="font-mono text-xl text-retro-dim tracking-widest uppercase font-bold">NEURAL_CHOICE</span>
             <span className="font-mono text-xs text-retro-dim/60 uppercase mt-1 tracking-wider">Gemini Analysis</span>
           </div>
         </AnimatedBlock>

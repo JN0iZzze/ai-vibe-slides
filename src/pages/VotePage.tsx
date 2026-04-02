@@ -126,7 +126,7 @@ export const VotePage: React.FC = () => {
 
         <div className="mt-8 text-center">
           <div className="font-mono text-xs text-retro-dim/40 uppercase tracking-wider">
-            // BHSAD 2026
+            // GENERATIVE_GRAPHICS_2026
           </div>
         </div>
       </motion.div>

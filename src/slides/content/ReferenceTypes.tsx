@@ -6,7 +6,7 @@ export const ReferenceTypes: React.FC = () => {
   return (
     <div className="h-full w-full p-16 flex flex-col">
       <AnimatedBlock delay={0.1}>
-        <h2 className="text-8xl font-serif italic mb-12">Типы референсов</h2>
+        <h2 className="text-8xl font-serif italic mb-12">Роли референсов</h2>
       </AnimatedBlock>
       
       <div className="flex-1 grid grid-cols-2 grid-rows-2 gap-8">
@@ -17,8 +17,8 @@ export const ReferenceTypes: React.FC = () => {
               <User size={48} className="opacity-80" />
             </div>
             <div>
-              <h3 className="text-5xl font-bold mb-4 text-retro-bg">Identity</h3>
-              <p className="opacity-80 font-sans text-2xl">Персонаж / Лицо. Сохранение узнаваемости актера или маскота.</p>
+              <h3 className="text-5xl font-bold mb-4 text-retro-bg">Base / Identity</h3>
+              <p className="opacity-80 font-sans text-2xl">Главный источник персонажа, лица, одежды и всего, что нельзя потерять.</p>
             </div>
           </div>
         </AnimatedBlock>
@@ -31,7 +31,7 @@ export const ReferenceTypes: React.FC = () => {
             </div>
             <div>
               <h3 className="text-5xl font-bold mb-4 text-retro-text">Style</h3>
-              <p className="opacity-70 font-sans text-2xl">Стиль / Эстетика. Цветовая гамма, техника рисования, настроение.</p>
+              <p className="opacity-70 font-sans text-2xl">Цвет, фактура, эстетика, общий mood. Обычно это мягкая инструкция, а не главный приоритет.</p>
             </div>
           </div>
         </AnimatedBlock>
@@ -44,7 +44,7 @@ export const ReferenceTypes: React.FC = () => {
             </div>
             <div>
               <h3 className="text-5xl font-bold mb-4 text-retro-text">Composition</h3>
-              <p className="opacity-70 font-sans text-2xl">Композиция / Поза. Расположение объектов, ракурс камеры.</p>
+              <p className="opacity-70 font-sans text-2xl">Поза, кадрирование, расположение объектов, перспектива и работа камеры.</p>
             </div>
           </div>
         </AnimatedBlock>
@@ -56,8 +56,8 @@ export const ReferenceTypes: React.FC = () => {
               <Box size={48} />
             </div>
             <div>
-              <h3 className="text-5xl font-bold mb-4 text-retro-text">Material</h3>
-              <p className="opacity-70 font-sans text-2xl">Материал / Текстура. Фактура ткани, металла, кожи.</p>
+              <h3 className="text-5xl font-bold mb-4 text-retro-text">Object / Material</h3>
+              <p className="opacity-70 font-sans text-2xl">Дополнительный объект, пропс или текстура, которые нужно встроить в итоговый кадр.</p>
             </div>
           </div>
         </AnimatedBlock>

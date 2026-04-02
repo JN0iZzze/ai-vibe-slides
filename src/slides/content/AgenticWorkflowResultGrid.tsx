@@ -9,20 +9,19 @@ const models = [
 
 export const AgenticWorkflowResultGrid: React.FC = () => {
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center py-8 px-8 overflow-hidden">
-      <AnimatedBlock delay={0.1} className="w-full h-full flex flex-col justify-center gap-6">
-        {/* Single row grid - full width, max size */}
-        <div className="grid grid-cols-3 gap-6 w-full">
+    <div className="h-full w-full flex flex-col items-center justify-center overflow-hidden px-8 py-8">
+      <AnimatedBlock delay={0.1} className="flex w-full min-h-0 flex-col items-center justify-center">
+        <div className="grid w-full grid-cols-3 items-center gap-6">
           {models.map((model) => (
-            <div key={model.name} className="flex flex-col items-center rounded-[2rem] overflow-hidden">
-              <div className="aspect-2/3 w-full rounded-[2rem] overflow-hidden">
+            <div key={model.name} className="flex min-h-0 flex-col items-center justify-center">
+              <div className="aspect-[3/2] w-full min-h-0 overflow-hidden rounded-[2rem]">
                 <img
                   src={model.src}
                   alt=""
-                  className="w-full h-full object-cover rounded-[2rem]"
+                  className="h-full w-full rounded-[2rem] object-cover"
                 />
               </div>
-              <div className="font-mono text-3xl text-retro-dim uppercase tracking-widest mt-6">
+              <div className="mt-6 font-mono text-3xl uppercase tracking-widest text-retro-dim">
                 {model.name}
               </div>
             </div>

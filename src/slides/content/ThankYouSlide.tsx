@@ -14,8 +14,8 @@ export const ThankYouSlide: React.FC = () => {
       <div className="flex justify-between items-start z-10 w-full">
         <AnimatedBlock delay={0.1}>
           <div className="flex flex-col">
-            <span className="font-mono text-xl text-retro-dim tracking-widest uppercase font-bold">BHSAD 2026</span>
-            <span className="font-mono text-xs text-retro-dim/60 uppercase mt-1 tracking-wider">British Higher School of Art & Design</span>
+            <span className="font-mono text-xl text-retro-dim tracking-widest uppercase font-bold">GENERATIVE_GRAPHICS</span>
+            <span className="font-mono text-xs text-retro-dim/60 uppercase mt-1 tracking-wider">IMAGE_CONTEXT_ENGINEERING</span>
           </div>
         </AnimatedBlock>
         

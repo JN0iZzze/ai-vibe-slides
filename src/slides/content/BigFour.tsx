@@ -26,8 +26,8 @@ export const BigFour: React.FC = () => {
               <Gemini size={48} className="opacity-80" />
             </div>
             <div className="z-10">
-              <h3 className="text-5xl font-bold mb-4 text-retro-bg leading-none">Nano Banana Pro</h3>
-              <p className="opacity-80 font-sans text-2xl leading-tight">Главный геймчейнджер</p>
+              <h3 className="text-5xl font-bold mb-4 text-retro-bg leading-none">Nano Banana Pro (2)</h3>
+              <p className="opacity-80 font-sans text-2xl leading-tight">Главный сдвиг в генерации и редактировании</p>
             </div>
           </div>
         </AnimatedBlock>
@@ -43,7 +43,7 @@ export const BigFour: React.FC = () => {
             </div>
             <div className="z-10">
               <h3 className="text-5xl font-bold mb-2 text-retro-text leading-none">Higgsfield</h3>
-              <p className="opacity-70 font-sans text-2xl leading-tight">Cinema Studio 2.0, AI Influencer, Vibe Motion</p>
+              <p className="opacity-70 font-sans text-2xl leading-tight">Cinema Studio 2.0, AI Influencer и новые motion-сценарии</p>
             </div>
           </div>
         </AnimatedBlock>
@@ -59,7 +59,7 @@ export const BigFour: React.FC = () => {
             </div>
             <div className="z-10">
               <h3 className="text-5xl font-bold mb-2 text-retro-text leading-none">Weavy.ai</h3>
-              <p className="opacity-70 font-sans text-2xl leading-tight">Нодовая платформа (теперь во владении Figma)</p>
+              <p className="opacity-70 font-sans text-2xl leading-tight">Нодовая платформа для сборки рабочих процессов</p>
             </div>
           </div>
         </AnimatedBlock>
@@ -72,7 +72,7 @@ export const BigFour: React.FC = () => {
             </div>
             <div>
               <h3 className="text-3xl font-bold mb-1 text-retro-text">Freepik</h3>
-              <p className="opacity-60 font-sans text-xl leading-tight">Node-based spaces</p>
+              <p className="opacity-60 font-sans text-xl leading-tight">Нодовые пространства</p>
             </div>
           </div>
         </AnimatedBlock>

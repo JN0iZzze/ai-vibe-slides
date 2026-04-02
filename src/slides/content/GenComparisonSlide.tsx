@@ -12,7 +12,7 @@ const items = [
 
 export const GenComparisonSlide: React.FC = () => {
   return (
-    <div className="h-full w-full flex flex-col items-center justify-center py-8 px-8 overflow-hidden">
+    <div className="flex h-full w-full flex-col overflow-hidden p-16">
       <AnimatedBlock delay={0.1} className="w-full h-full flex flex-col gap-4">
         <h1 className="font-serif text-7xl text-retro-text text-center shrink-0">Стилизованная графика</h1>
         <div className="grid grid-cols-3 grid-rows-2 gap-6 w-full flex-1 min-h-0">
